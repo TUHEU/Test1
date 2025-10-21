@@ -67,7 +67,9 @@ a {
 .hero-content span {
   color: #00ff88;
 }
-
+.hero-content p{
+  color:goldenrod;
+}
 /* ===== About Section ===== */
 .about {
   padding: 80px 10%;
