@@ -1,15 +1,24 @@
-// Toggle mobile menu
-const menuToggle = document.getElementById("menu-toggle");
-const navLinks = document.querySelector(".nav-links");
+// Handle Contact Form Submission (Fake Email Simulation)
+document.getElementById('contactForm').addEventListener('submit', function (e) {
+  e.preventDefault(); // Prevent page reload
 
-menuToggle.addEventListener("click", () => {
-  navLinks.classList.toggle("active");
-});
+  // Get form data
+  const name = document.getElementById('name').value.trim();
+  const email = document.getElementById('email').value.trim();
+  const message = document.getElementById('message').value.trim();
+  const status = document.querySelector('.status');
 
-// Simple form feedback
-const form = document.getElementById("contact-form");
-form.addEventListener("submit", (e) => {
-  e.preventDefault();
-  alert("Thank you! Your message has been sent.");
-  form.reset();
+  // Simple validation
+  if (!name || !email || !message) {
+    status.textContent = "Please fill all fields!";
+    status.style.color = "red";
+    return;
+  }
+
+  // Display success message
+  status.textContent = "Thank you, your message has been sent!";
+  status.style.color = "lightgreen";
+
+  // Clear form
+  document.getElementById('contactForm').reset();
 });
